@@ -1,3 +1,26 @@
+## genjava (kinetic) - 0.3.0-0
+
+The packages in the `genjava` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release genjava --track kinetic --rosdistro kinetic --new-track` on `Sat, 24 Dec 2016 20:23:23 -0000`
+
+The `genjava` package was released.
+
+Version of package(s) in repository `genjava`:
+
+- upstream repository: https://github.com/rosjava/genjava.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.3.0-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.23`
+- catkin_pkg version: `0.2.10`
+- rosdep version: `0.11.5`
+- rosdistro version: `0.5.0`
+- vcstools version: `0.1.39`
+
+
 ## genjava (indigo) - 0.1.4-0
 
 The packages in the `genjava` repository were released into the `indigo` distro by running `/usr/bin/bloom-release --track indigo --rosdistro indigo genjava` on `Sun, 01 Mar 2015 04:57:19 -0000`
