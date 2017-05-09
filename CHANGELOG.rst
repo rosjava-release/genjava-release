@@ -2,11 +2,24 @@
 Changelog for package genjava
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.1.5 (2017-03-30)
+0.3.3 (2017-05-09)
 ------------------
-* Fix bug package directory path, cherry-picked from kinetic
-* Added a more descriptive and helpful error message when a required package is not found in the mesasge package index.
-* Contributors: Daniel Stonier, Julian Cerruti, Martin Pecka, Perrine Aguiar
+* Updating message_generation dependency to kinetic range in template to generate messages properly.
+* Contributors: Juan Ignacio Ubeira, Julian Cerruti
+
+0.3.2 (2017-03-02)
+------------------
+* bugfix abspath problems for gradle
+
+0.3.1 (2017-02-22)
+------------------
+* publishMavenJavaPublicationToMavenRepository -> publish
+* Gradle 2.2.1 -> 2.14.1
+* Contributors: Julian Cerruti
+
+0.3.0 (2016-12-15)
+------------------
+* Updates for Kinetic release.
 
 0.1.4 (2015-03-01)
 ------------------
