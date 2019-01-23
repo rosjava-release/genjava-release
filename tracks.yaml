@@ -41,7 +41,7 @@ tracks:
     name: genjava
     patches: null
     release_inc: '0'
-    release_repo_url: null
+    release_repo_url: git@github.com:rosjava-release/genjava-release
     release_tag: :{version}
     ros_distro: kinetic
     vcs_type: git
