@@ -15,7 +15,7 @@
  */
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.14.1'
+    gradleVersion = '4.10.2'
 }
 
 buildscript {
@@ -67,26 +67,34 @@ jar {
     }
 }
 
-task info << {
-    println "\nProject Info"
-    println "============\n"
-    println "Name          : ${rootProject}"
-    println "Dir           : ${projectDir}"
-    println "Group         : ${group}"
-    println "Version       : ${version}"
-    println "Configurations: " + configurations
+/* Uncomment the following lines in package://genjava/src/genjava/templates/genjava_project/build.gradle.in to
+ * enable Java 6 cross compilation for ROS messages.
+ */
+// sourceCompatibility = 1.6
+// targetCompatibility = 1.6
 
-    println "\nPackage Info"
-    println "============\n"
-    println "Name          : %(project_name)s"
-    println "Dir           : %(pkg_directory)s"
+task info {
+    doLast {
+        println "\nProject Info"
+        println "============\n"
+        println "Name          : ${rootProject}"
+        println "Dir           : ${projectDir}"
+        println "Group         : ${group}"
+        println "Version       : ${version}"
+        println "Configurations: " + configurations
 
-    println "\nGenerate Info"
-    println "============\n"
-    println "Output Dir    : ${generated_sources_directory}"
-    println "Task Args     : " + tasks["generateSources"].args
-    tasks["generateSources"].outputs.getFiles().getAsFileTree().each {
-        println "Files         : ${it}"
+        println "\nPackage Info"
+        println "============\n"
+        println "Name          : %(project_name)s"
+        println "Dir           : %(pkg_directory)s"
+
+        println "\nGenerate Info"
+        println "============\n"
+        println "Output Dir    : ${generated_sources_directory}"
+        println "Task Args     : " + tasks["generateSources"].args
+        tasks["generateSources"].outputs.getFiles().getAsFileTree().each {
+            println "Files         : ${it}"
+        }
     }
 }
 
@@ -98,8 +106,10 @@ task info << {
  * Until we get this properly fixed (it fails in genjava), then we use the following bugfix to deal with the
  * 'Could not copy MANIFEST.MF...' error that occurs when no sources are to be made for an artifact.
  */
-task bugfixtask << {
-    mkdir sourceSets.main.output.classesDir
+task bugfixtask {
+    doLast {
+        mkdir sourceSets.main.output.classesDir
+    }
 }
 
 jar.dependsOn(bugfixtask)
